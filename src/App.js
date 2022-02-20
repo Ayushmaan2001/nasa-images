@@ -20,7 +20,6 @@ const App = () => {
     });
   }, []);
 
-  console.log(arr);
   return (
     <>
       <div className="container">
