@@ -8,7 +8,7 @@ const App = () => {
     var promise = new Promise((resolve, reject) => {
       axios
         .get(
-          "https://api.nasa.gov/planetary/apod?api_key=R4s5xcOxoYklREakJOSoeNMCOK4tpM8iqg6slJ15&count=5&hd=true"
+          "https://api.nasa.gov/planetary/apod?api_key=R4s5xcOxoYklREakJOSoeNMCOK4tpM8iqg6slJ15&count=10&hd=true"
         )
         .then((res) => {
           resolve(res.data);
