@@ -50,7 +50,7 @@ const App = () => {
             </div>
           );
         })}
-        <div className="end">Click Refresh to read more</div>
+        <div className="end">Refresh to read more</div>
       </div>
     </>
   );
