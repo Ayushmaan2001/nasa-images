@@ -1,25 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import axios from "axios";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [arr, setarr] = useState([]);
+  useEffect(() => {
+    var promise = new Promise((resolve, reject) => {
+      axios
+        .get(
+          "https://api.nasa.gov/planetary/apod?api_key=R4s5xcOxoYklREakJOSoeNMCOK4tpM8iqg6slJ15&count=5&hd=true"
+        )
+        .then((res) => {
+          resolve(res.data);
+          reject("not found");
+        });
+    });
+    promise.then((res) => {
+      setarr(res);
+    });
+  }, []);
+
+  console.log(arr);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="container">
+        {arr.map((val, i) => {
+          return (
+            <div
+              id="carouselExampleIndicators"
+              className="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div className="carousel-indicators"></div>
+              <div className="carousel-inner">
+                <div className="carousel-item active">
+                  <img
+                    src={val.hdurl}
+                    key={i}
+                    className="d-block w-100 image"
+                    alt="img"
+                  ></img>
+                  <div className="badge text-wrap" >
+                    {val.explanation}
+                  </div>
+                  <br />
+                </div>
+              </div>
+              <br />
+              <br />
+            </div>
+          );
+        })}
+        <div className="end">Click Refresh to read more</div>
+      </div>
+    </>
   );
-}
+};
 
 export default App;
