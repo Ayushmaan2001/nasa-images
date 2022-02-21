@@ -1,12 +1,13 @@
 body
 {
-    background-color: white;
+    background-image: url("https://images.unsplash.com/photo-1519810755548-39cd217da494?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Nnx8fGVufDB8fHx8&w=1000&q=80");
+    background-size:20% 100%
 }
 .container
 {
     padding: 1rem;
     max-width: 80rem;
-    background-color: grey;
+   
 }
 .image
 {
@@ -15,10 +16,12 @@ body
 }
 .badge
 {
-    background-color:#5DFDCB;
+    background-color:black;
+    opacity: 0.5;
     text-align: center;
-    color: #C03221;
+    color:#47FF00;
     font-size:large;
+    font-family:'Architects Daughter'
 }
 .end
 {
