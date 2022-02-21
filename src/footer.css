@@ -1,0 +1,11 @@
+footer
+{
+    background-color: lightskyblue;
+    max-height:20rem
+}
+
+.text-muted
+{
+    font-size: medium;
+    color: red;
+}

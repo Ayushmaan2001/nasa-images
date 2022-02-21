@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
+import Navbar from './navbar'
+import Footer from './footer'
 
 const App = () => {
   const [arr, setarr] = useState([]);
@@ -22,6 +24,7 @@ const App = () => {
 
   return (
     <>
+    <Navbar/>
       <div className="container">
         {arr.map((val, i) => {
           return (
@@ -52,6 +55,7 @@ const App = () => {
         })}
         <div className="end">Refresh to read more</div>
       </div>
+      <Footer />
     </>
   );
 };
